@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<p>Import a maximum of 20,000 academic data records at a time.</p>
+
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+<h5 class="card-title">CSV Dataset Importer</h5>
+<form method="POST" action="/datasets/import/upload_file" enctype="multipart/form-data">
+
+<p>Upload the csv file here...</p>
+<div class="input-group mb-3">
+<input class="form-control" type="file" name="file" accept=".csv">
+</div>
+<div class="input-group mb-4">
+<input type="submit" class="btn btn-primary" value="Import">
+<input type="submit" class="btn btn-light" value="Cancel">
+</div>
+</form>
+</div>
+</div>
+{% endblock %}

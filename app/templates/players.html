@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+ <table id="data" class="table table-striped">
+
+   <thead>
+
+     <tr>
+
+       <th>Location</th>
+
+     </tr>
+
+   </thead>
+
+   <tbody>
+
+   </tbody>
+
+ </table>
+
+
+
+
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+ <script>
+
+   $(document).ready(function () {
+
+     $('#data').DataTable({
+
+       ajax: '/api/players',
+
+       pageLength: 25,
+
+       columns: [
+
+         {data: 'short_name'}
+
+       ],
+
+     });
+
+   });
+
+ </script>
+
+{% endblock %}
